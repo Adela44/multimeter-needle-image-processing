@@ -15,7 +15,7 @@ end
 log_y = log10(y);
 
 % Alegem gradul polinomului (ex: grad 3)
-grad_polinom = 3;
+grad_polinom = 2;
 
 % Fit pe log(y)
 coef_polinom_log = polyfit(x_final, log_y, grad_polinom);
@@ -41,3 +41,12 @@ title('Interpolare Polinomială pe log(y)');
 
 log_y = polyval([0, 0.0019, -0.1874, 8.4167], x);
 y_new = 10.^log_y;
+
+
+
+
+log_y_func = @(x) 0.0003 .* x.^2 - 0.0586 .* x + 5.1327;
+
+% Calculam y(x)
+y_func = @(x) 10.^log_y_func(x);
+y_func(51)
