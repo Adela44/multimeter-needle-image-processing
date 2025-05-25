@@ -18,10 +18,13 @@ disp('x_final:');
 disp(x_final);
 
 % Interpolare polinomială (grad 3, de exemplu)
-n = 3;
+n = 2;
 p = polyfit(x_final, y, n);
 
-disp('Coeficienții polinomului (grad 3):');
+f = @(x) (0.0024*x^(2)+0.832*x-41.72777);
+f(117.2)
+
+disp('Coeficienții polinomului (grad 2):');
 disp(p);
 
 % Generăm puncte pentru desen
