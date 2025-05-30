@@ -1,6 +1,7 @@
 % Date originale
 x = [-50.85, -51, -53.08, -55.93, -61.04, -69.86, -88.03, 83.02, 74.85, 62.80];
-y = [6, 7, 9, 13, 19, 28, 50, 61, 73, 89];
+y_Amp = [6, 7, 9, 13, 19, 28, 50, 61, 73, 89];
+z_Ohm = [820, 680, 560, 390, 270, 180, 100, 82, 68, 56];
 
 % Transformări
 x_final = x;
@@ -17,12 +18,21 @@ end
 disp('x_final:');
 disp(x_final);
 
-% Interpolare polinomială (grad 3, de exemplu)
+% Interpolare polinomială
 n = 2;
-p = polyfit(x_final, y, n);
+p = polyfit(x_final, y_Amp, n);
 
-f = @(x) (0.0024*x^(2)+0.832*x-41.72777);
-5/f(53) %partea pt ohmi
+U = 5 %V
+
+f_Amp = @(x) (0.0024*x^(2) + 0.832*x - 41.72777);
+f_Ohm = @(x) (U/f_Amp(x))*10^3;
+
+%Exemplu pentru valoarea unghiului 53.08
+disp('Valoarea I (Amp): ')
+f_Amp(53)
+
+disp('Valoarea R (Ohm): ')
+f_Ohm(53)
 
 disp('Coeficienții polinomului (grad 2):');
 disp(p);
@@ -33,10 +43,10 @@ y_fit = polyval(p, x_fit);
 
 % Plot
 figure;
-plot(x_final, y, 'o', 'MarkerSize', 8, 'DisplayName', 'Date transformate');
+plot(x_final, y_Amp, 'o', 'MarkerSize', 8, 'DisplayName', 'Date transformate');
 hold on;
 plot(x_fit, y_fit, '-', 'LineWidth', 2, 'DisplayName', sprintf('Interpolare grad %d', n));
-xlabel('x (modificat)');
+xlabel('x (unghi)');
 ylabel('y (mA)');
 legend;
 grid on;
