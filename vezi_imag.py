@@ -33,7 +33,6 @@ for line in lines:
     length = math.hypot(dx, dy)
     angle = abs(math.degrees(math.atan2(dy, dx)))
 
-    # unghiul intre 0 si 180
     angle = angle if angle <= 180 else 360 - angle
 
     if min_length < length and angle_threshold_min < angle < angle_threshold_max:
