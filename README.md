@@ -1,3 +1,8 @@
+This README is in Romanian.
+For the English version, see README_en.md
+
+# Procesarea imaginii acului unui multimetru 
+
 Programul estimează valoarea în mA indicată de acul unui multimetru cu OpenCV și MATLAB.
 În folderul "poze_dem" se află câteva imagini corespunzătoare unor valori ale acului.
 Vom construi o funcție de interpolare pe baza acelor valori și a unghiului indicat de ac.
