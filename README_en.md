@@ -1,6 +1,8 @@
 This README is in English.
 For the Romanian version, see README.md
 
+# Multimeter Needle Image Processing
+
 The program estimates the current value in mA indicated by the needle of an analog multimeter using OpenCV and MATLAB.
 In the folder "poze_dem" there are several images corresponding to known needle positions.
 An interpolation function was build based on those values and the angle indicated by the needle.
