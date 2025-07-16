@@ -3,7 +3,7 @@ x = [-50.85, -51, -53.08, -55.93, -61.04, -69.86, -88.03, 83.02, 74.85, 62.80];
 y_Amp = [6, 7, 9, 13, 19, 28, 50, 61, 73, 89];
 z_Ohm = [820, 680, 560, 390, 270, 180, 100, 82, 68, 56];
 
-% Transformări (vectorul x_final) pentru unghi
+% Transformari (vectorul x_final) pentru unghi
 x_final = x;
 for i = 1:length(x)
     if x(i) < 0
@@ -18,11 +18,11 @@ end
 disp('x_final:');
 disp(x_final);
 
-% Interpolare polinomială
+% Interpolare polinomiala
 n = 2;
 p = polyfit(x_final, y_Amp, n);
 
-disp('Coeficienții polinomului (grad 2):');
+disp('Coeficientii polinomului (grad 2):');
 disp(p);
 
 U = 5; %V
@@ -39,7 +39,7 @@ f_Ohm(53)
 
 
 
-% Generăm puncte pentru desen
+% Generam puncte pentru desen
 x_fit = linspace(min(x_final), max(x_final), 200);
 y_fit = polyval(p, x_fit);
 
