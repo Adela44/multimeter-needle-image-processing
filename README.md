@@ -12,4 +12,5 @@ Pe scurt, programul extrage unghiul dintr-o imagine, îl introduce în funcție,
 Pentru o precizie mai mare este nevoie de mai multe imagini.
 
 Câteva mențiuni:
-"vezi_imag.py" este programul final în Python.
+- "vezi_imag.py" este programul final în Python.
+- in fișierul matlab „interp_mA_si_Ohmi_final.m” se află valorile pentru curentul teoretic și, pentru fiecare valoare (în ordine), rezistențele corespunzătoare. De asemenea, se află și valorile unghiului acului multimetrului, înainte de aplicarea transformării pentru funcția de interpolare.
