@@ -12,4 +12,5 @@ In short, the program extracts the needle angle from an image, puts it into the 
 For better accuracy, more images are recommended.
 
 A few notes:
-vezi_imag.py is the final Python script.
+- "vezi_imag.py" is the final Python script
+- the matlab file "interp_mA_si_Ohmi_final.m" contains the theoretical current values and, in order, the corresponding resistances for each value. It also includes the needle angle values from the multimeter, before the transformation is applied for the interpolation function.
